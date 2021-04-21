@@ -17,10 +17,12 @@ jobs:
           nix_path: nixpkgs=channel:nixos-unstable
           extraPullNames: miso-haskell
 
+      - uses: cachix/cachix-action@v10
+        with:
+          extraPullNames: miso-haskell
+
       - name: Build site
         run:
-          nix-env -iA cachix -f https://cachix.org/api/v1/install && \
-          cachix use miso-haskell &&\
           nix-build
 
       - name: Publish site
