@@ -27,7 +27,7 @@ jobs:
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
         with:
-          build_dir: site
+          build_dir: site/bin/app.jsexe
           target_branch: gh-pages
           keep_history: false
         env:
