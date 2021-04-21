@@ -50,7 +50,7 @@ updateModel (InputChanged s) m = noEff ( m { string = formatStr s } )
 viewModel :: Model -> View Action
 viewModel m = div_ [] [
    h1_ [] [ text "Paste something" ]
- , div_ [] [ p_ [] [ text "Formatted by"
+ , div_ [] [ p_ [] [ text "Formatted by "
                        , a_ [ href_ "https://github.com/edsko/friendly" ] [ "friendly"]
                        ] 
            ]
