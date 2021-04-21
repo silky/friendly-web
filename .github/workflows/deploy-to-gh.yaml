@@ -24,8 +24,11 @@ jobs:
         run: nix-build -o site
 
       - name: Publish site
-        uses: maxheld83/ghpages@v0.3.0
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          build_dir: site
+          target_branch: gh-pages
+          keep_history: false
         env:
-          GH_PAT: ${{ secrets.GH_PAT }}
-          BUILD_DIR: site
-
+          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
