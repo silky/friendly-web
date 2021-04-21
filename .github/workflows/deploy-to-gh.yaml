@@ -18,7 +18,7 @@ jobs:
 
       - uses: cachix/cachix-action@v10
         with:
-          extraPullNames: miso-haskell
+          name: miso-haskell
 
       - name: Build site
         run: nix-build
