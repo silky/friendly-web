@@ -21,11 +21,11 @@ jobs:
           name: miso-haskell
 
       - name: Build site
-        run: nix-build
+        run: export DIR=`nix-build`
 
       - name: Publish site
         uses: maxheld83/ghpages@v0.3.0
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
-          BUILD_DIR: ./result/bin/app.jsexe/
+          BUILD_DIR: ${DIR}/bin/app.jsexe/
 
