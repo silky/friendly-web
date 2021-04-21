@@ -15,9 +15,10 @@ jobs:
       - uses: cachix/install-nix-action@v13
         with:
           nix_path: nixpkgs=channel:nixos-unstable
+          extraPullNames: miso-haskell
 
       - name: Build site
-        run: cachix use miso-haskell && nix-build
+        run: nix-build
 
       - name: Publish site
         uses: maxheld83/ghpages@v0.3.0
