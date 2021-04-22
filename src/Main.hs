@@ -49,10 +49,13 @@ updateModel (InputChanged s) m = noEff ( m { string = formatStr s } )
 -- | Constructs a virtual DOM from a model
 viewModel :: Model -> View Action
 viewModel m = div_ [] [
-   h1_ [] [ text "Paste something" ]
- , div_ [] [ p_ [] [ text "Formatted by "
-                       , a_ [ href_ "https://github.com/edsko/friendly" ] [ "friendly"]
-                       ] 
+   h1_ [] [ "Paste something" ]
+ , div_ [] [ p_ [] [ "Formatted by "
+                   , a_ [ href_ "https://github.com/edsko/friendly" ] [ "friendly" ]
+                   , " "
+                   , small_ [] [ a_ [ href_ "https://github.com/silky/friendly-web"] [ "(source for this site)" ] ]
+                   , "."
+                   ] 
            ]
  , textarea_ [ onChange InputChanged , cols_ "100", rows_ "20" ] []
  , pre_ [] [ text . ms . string $ m ]
