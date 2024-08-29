@@ -1,4 +1,4 @@
-# Friendly-Web
+# [Friendly-Web](https://silky.github.io/friendly-web/)
 
 [friendly](https://github.com/edsko/friendly) by
 [Edsko](https://github.com/edsko), in the browser compiled by
